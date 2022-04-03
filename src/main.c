@@ -158,7 +158,7 @@ void load_A()
 	system("cls");
 	HideCursor(1);
 	system("color 74");
-	p=fopen("C:\\project design\\ad.dat","rb");
+	p=fopen("data\\ad.dat","rb");
     if(p==0)
 	{
 		printf("file ad_r error\n");
@@ -212,7 +212,7 @@ void load_S()
 	char ss[10];
 	student_card student_r[20];
 	int sss=0;
-	p=fopen("C:\\project design\\student.dat","rb");
+	p=fopen("data\\student.dat","rb");
     if(p==0)
 	{
 		printf("file student_r_load error\n");
@@ -266,7 +266,7 @@ void register_()//注册用户
 	student_card student_r[20];
 	int ss=0;
 	char nn[20],cc[10]="000007";
-	p=fopen("C:\\project design\\student.dat","rb");
+	p=fopen("data\\student.dat","rb");
     if(p==0)
 	{
 		printf("file student_r_register error\n");
@@ -307,7 +307,7 @@ void register_()//注册用户
 	toxy(17,13);
 	printf("状态:%d",student_r[ss-1].state);
 	Sleep(4000);
-	p=fopen("C:\\project design\\student.dat","wb");
+	p=fopen("data\\student.dat","wb");
 	if(p==0)
 	{
 		printf("file student_r_add error\n");
@@ -316,7 +316,7 @@ void register_()//注册用户
 	fwrite(student_r,sizeof(student_card),ss,p);
 	fclose(p);
 	welcome();
-	/*p=fopen("C:\\project design\\student0.dat","rb");
+	/*p=fopen("data\\student0.dat","rb");
     if(p==0)
 	{
 		printf("file student0_add error\n");
@@ -333,7 +333,7 @@ void cancel_()//注销用户
 	student_card student_r[20];
 	int bb,i,ss=0;
 	char p[10];
-	pp=fopen("C:\\project design\\student.dat","rb");
+	pp=fopen("data\\student.dat","rb");
     if(pp==0)
 	{
 		system("cls");
@@ -379,7 +379,7 @@ void cancel_()//注销用户
 	toxy(30,3);
 	printf("注销成功");
 	Sleep(1000);
-	pp=fopen("C:\\project design\\student.dat","wb");
+	pp=fopen("data\\student.dat","wb");
 	if(pp==0)
 	{
 		system("cls");
@@ -392,7 +392,7 @@ void cancel_()//注销用户
 	fwrite(student_r,sizeof(student_card),ss,pp);
 	fclose(pp);
 	welcome();
-	/*pp=fopen("C:\\project design\\student.dat","rb");
+	/*pp=fopen("data\\student.dat","rb");
     if(pp==0)
 	{
 		system("cls");
@@ -421,7 +421,7 @@ void add_()//添加菜品
 	char cm[20];
 	int c,i;
 	double p;
-	pp=fopen("C:\\project design\\menu.dat","rb");
+	pp=fopen("data\\menu.dat","rb");
     if(pp==0)
 	{
 		system("cls");
@@ -467,7 +467,7 @@ void add_()//添加菜品
 	menu_r[i].price =p;
 	toxy(30,3);
 	printf("菜品添加成功!");
-	pp=fopen("C:\\project design\\menu.dat","wb");
+	pp=fopen("data\\menu.dat","wb");
 	if(pp==0)
 	{
 		printf("file menu_add error\n");
@@ -475,7 +475,7 @@ void add_()//添加菜品
 	}
 	fwrite(menu_r,sizeof(Menu),i+1,pp);
 	fclose(pp);
-	pp=fopen("C:\\project design\\menu.dat","rb");
+	pp=fopen("data\\menu.dat","rb");
 	if(pp==0)
 	{
 		printf("file menu_add0 error\n");
@@ -498,7 +498,7 @@ void look_up_record_()
 	int bb=STU;
 	student_card student_r[20];
 	int ss=0;
-	pp=fopen("C:\\project design\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	pp=fopen("data\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(pp==0)
 	{
 					system("cls");
@@ -525,13 +525,13 @@ void look_up_record_()
 	toxy(1,5);
 		switch(bb)
 		{
-		case 0:pp=fopen("C:\\project design\\buy000001.dat","rb");break;
-		case 1:pp=fopen("C:\\project design\\buy000002.dat","rb");break;
-        case 2:pp=fopen("C:\\project design\\buy000003.dat","rb");break;
-		case 3:pp=fopen("C:\\project design\\buy000004.dat","rb");break;
-		case 4:pp=fopen("C:\\project design\\buy000005.dat","rb");break;
-		case 5:pp=fopen("C:\\project design\\buy000006.dat","rb");break;
-		case 6:pp=fopen("C:\\project design\\buy000007.dat","rb");break;
+		case 0:pp=fopen("data\\buy000001.dat","rb");break;
+		case 1:pp=fopen("data\\buy000002.dat","rb");break;
+        case 2:pp=fopen("data\\buy000003.dat","rb");break;
+		case 3:pp=fopen("data\\buy000004.dat","rb");break;
+		case 4:pp=fopen("data\\buy000005.dat","rb");break;
+		case 5:pp=fopen("data\\buy000006.dat","rb");break;
+		case 6:pp=fopen("data\\buy000007.dat","rb");break;
 		}
 		if(pp==0)
 			{
@@ -558,7 +558,7 @@ void buy_()
 	Menu menu_r[10];
 	FILE *b;
 	bb=STU;
-	b=fopen("C:\\project design\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	b=fopen("data\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(b==0)
 	{
 					system("cls");
@@ -576,7 +576,7 @@ void buy_()
 		aa++;
 	}
 	fclose(b);
-	b=fopen("C:\\project design\\menu.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	b=fopen("data\\menu.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(b==0)
 	{
 					system("cls");
@@ -649,7 +649,7 @@ void buy_()
 						buy_();
 					}
 				}
-				b=fopen("C:\\project design\\student.dat","wb");
+				b=fopen("data\\student.dat","wb");
 				if(b==0)
 				{
 					system("cls");
@@ -665,7 +665,7 @@ void buy_()
 				buy[kk[bb]].copy=c;
 				buy[kk[bb]].consuption=menu_r[i].price*c;
 				buy[kk[bb]].money=st[bb].money;
-				b=fopen("C:\\project design\\menu.dat","wb");
+				b=fopen("data\\menu.dat","wb");
 				if(b==0)
 				{
 					system("cls");
@@ -681,13 +681,13 @@ void buy_()
 				{
 					switch(bb)
 				{
-	 	        case 0:b=fopen("C:\\project design\\buy000001.dat","wb");break;
-		        case 1:b=fopen("C:\\project design\\buy000002.dat","wb");break;
-                case 2:b=fopen("C:\\project design\\buy000003.dat","wb");break;
-			    case 3:b=fopen("C:\\project design\\buy000004.dat","wb");break;
-				case 4:b=fopen("C:\\project design\\buy000005.dat","wb");break;
-                case 5:b=fopen("C:\\project design\\buy000006.dat","wb");break;
-				case 6:b=fopen("C:\\project design\\buy000007.dat","wb");break;
+	 	        case 0:b=fopen("data\\buy000001.dat","wb");break;
+		        case 1:b=fopen("data\\buy000002.dat","wb");break;
+                case 2:b=fopen("data\\buy000003.dat","wb");break;
+			    case 3:b=fopen("data\\buy000004.dat","wb");break;
+				case 4:b=fopen("data\\buy000005.dat","wb");break;
+                case 5:b=fopen("data\\buy000006.dat","wb");break;
+				case 6:b=fopen("data\\buy000007.dat","wb");break;
 				}
 			 
 			   if(b==0)
@@ -706,13 +706,13 @@ void buy_()
 			{
 				switch(bb)
 				{
-		        case 0:b=fopen("C:\\project design\\buy000001.dat","ab");break;
-		        case 1:b=fopen("C:\\project design\\buy000002.dat","ab");break;
-                case 2:b=fopen("C:\\project design\\buy000003.dat","ab");break;
-			    case 3:b=fopen("C:\\project design\\buy000004.dat","ab");break;
-				case 4:b=fopen("C:\\project design\\buy000005.dat","ab");break;
-				case 5:b=fopen("C:\\project design\\buy000006.dat","ab");break;
-				case 6:b=fopen("C:\\project design\\buy000007.dat","ab");break;
+		        case 0:b=fopen("data\\buy000001.dat","ab");break;
+		        case 1:b=fopen("data\\buy000002.dat","ab");break;
+                case 2:b=fopen("data\\buy000003.dat","ab");break;
+			    case 3:b=fopen("data\\buy000004.dat","ab");break;
+				case 4:b=fopen("data\\buy000005.dat","ab");break;
+				case 5:b=fopen("data\\buy000006.dat","ab");break;
+				case 6:b=fopen("data\\buy000007.dat","ab");break;
 				}
 				
 				if(b==0)
@@ -758,7 +758,7 @@ void deposit_()
 	int ss=0,i;
 	double m;
 	char cc[10];
-	p=fopen("C:\\project design\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	p=fopen("data\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(p==0)
 	{
 					system("cls");
@@ -805,7 +805,7 @@ void deposit_()
 	toxy(17,7);
 	printf("您的余额为：%lf",student_r[i].money );
 	Sleep(4000);
-	p=fopen("C:\\project design\\student.dat","wb");
+	p=fopen("data\\student.dat","wb");
 	if(p==0)
 	{
 		printf("file student_deposit error\n");
@@ -821,7 +821,7 @@ void lose_and_relive_lose_()
 	student_card student_r[20];
 	int ss=0,i,a;
 	char cc[10];
-	p=fopen("C:\\project design\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	p=fopen("data\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(p==0)
 	{
 					system("cls");
@@ -879,7 +879,7 @@ void lose_and_relive_lose_()
 	printf("解挂成功！");
 	Sleep(4000);break;
 	}
-    p=fopen("C:\\project design\\student.dat","wb");
+    p=fopen("data\\student.dat","wb");
 	if(p==0)
 	{
 		printf("file student_deposit error\n");
@@ -895,7 +895,7 @@ void look_up_card()
 	student_card student_r[20];
 	int ss=0,i;
 	char cc[10];
-	p=fopen("C:\\project design\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	p=fopen("data\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(p==0)
 	{
 					system("cls");
@@ -949,7 +949,7 @@ void look_up_money_()
 	FILE *p;
 	student_card student_r[20];
 	int ss=0;
-	p=fopen("C:\\project design\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	p=fopen("data\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(p==0)
 	{
 					system("cls");
@@ -981,7 +981,7 @@ void figure_()
 	FILE *p;
 	student_card student_r[20];
 	int ss=0;
-	p=fopen("C:\\project design\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
+	p=fopen("data\\student.dat","rb");//将学生的信息读出来以便后续有改动再读进去
     if(p==0)
 	{
 					system("cls");
@@ -1025,7 +1025,7 @@ void figure_()
 int main()
 {
 	FILE *p;
-	p=fopen("C:\\project design\\student.dat","wb");
+	p=fopen("data\\student.dat","wb");
 	if(p==0)
 	{
 		printf("file student_write error");
@@ -1033,7 +1033,7 @@ int main()
 	}
 	fwrite(student,sizeof(student_card),6,p);
 	fclose(p);
-	p=fopen("C:\\project design\\menu.dat","wb");
+	p=fopen("data\\menu.dat","wb");
 	if(p==0)
 	{
 		printf("file menu_write error");
@@ -1041,7 +1041,7 @@ int main()
 	}
 	fwrite(menu,sizeof(Menu),5,p);
 	fclose(p);
-    p=fopen("C:\\project design\\ad.dat","wb");
+    p=fopen("data\\ad.dat","wb");
 	if(p==0)
 	{
 		printf("file ad_write error");
